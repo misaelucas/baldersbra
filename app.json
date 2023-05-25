@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1d1d5841-7d9e-4dda-9627-ecff9dbdc6a1"
+      }
+    },
+    "owner": "misaelucas"
   }
 }
