@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
  
   h1: {
     color: "white",
-    marginTop: "%",
+    marginTop: "",
     fontSize: '32px',
     letterSpacing: '-1px',
     
