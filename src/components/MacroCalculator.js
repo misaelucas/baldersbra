@@ -20,22 +20,24 @@ export default function Header() {
   const [bulking, setBulking] = React.useState("");
   const [isShown, setIsShown] = React.useState(false);
 
+  
   const justCalc = (e) => {
     if (sex == "M") {
       setTMB(10 * weight + 6.25 * height - 5 * age - 161);
       setGET(tmb * selectedValue);
       setCutting(get - 500);
       setBulking(get + 300);
-      setIsShown((current) => !current);
     }
     if (sex == "H") {
       setTMB(10 * weight + 6.25 * height - 5 * age + 5);
       setGET(tmb * selectedValue);
       setCutting(get - 500);
       setBulking(get + 300);
-      setIsShown((current) => !current);
     }
   };
+  React.useEffect(() => {
+justCalc();
+  });
 
   return (
     <View style={styles.container}>
@@ -96,19 +98,23 @@ export default function Header() {
         </View>
       </View>
 
-      {isShown && (
         <View>
           <View>
             <Text style={styles.rendering}>
-              Sua taxa metabólica basal é de {tmb} calorias e seu gasto
-              energético total é de {get}. Caso você queira ganhar peso, suas
-              ingestão diária deve ser de {bulking}. Isso é um superávit
-              calórico de 300kcal diários. Caso deseje perder peso, sua ingestão
-              diária deve ser de {cutting}, com um déficit calórico de 500kcal.
+            Basal Matabolic Rate: {tmb}kcal
             </Text>
+            <Text style={styles.rendering}>
+            Total Daily Energy Expenditure: {get}kcal
+            </Text>
+            <Text style={styles.rendering}>
+              Cutting: {cutting}kcal (500 calories deficit)
+            </Text>
+            <Text style={styles.rendering}>
+              Bulking: {bulking}kcal (300 calories surplus)
+            </Text>
+           
           </View>
         </View>
-      )}
     </View>
   );
 }
