@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
+
 
 export default function Header() {
   return (
     <View style={styles.header}>
-      <Text style={styles.h1}> Macro Calculator </Text>
+      <Text style={styles.h1}> Baldersbra </Text>
     </View>
   );
 }
@@ -17,9 +18,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "black",
   },
+ 
   h1: {
-    color: "red",
-    marginTop: "10%",
+    color: "white",
+    marginTop: "%",
+    fontSize: '32px',
+    letterSpacing: '-1px',
+    
+    fontFamily: 'monospace',
+    fontWeight: 'bold',
     
   },
 });
